@@ -1,18 +1,16 @@
 package store.validator;
 
-import java.util.List;
+import store.controller.Controller;
 import store.enums.Constants;
 import store.enums.ErrorMessage;
-import store.model.Promotion;
 import store.util.CommonUtil;
 
 public class ProductValidator {
-    public static void validateProduct(String name, String price, String quantity, String promotion,
-                                       List<Promotion> promotions) {
+    public static void validateProduct(String name, String price, String quantity, String promotion) {
         validateProductName(name);
         validateProductPrice(price);
         validateProductQuantity(quantity);
-        validateProductPromotion(promotion, promotions);
+        validateProductPromotion(promotion);
     }
 
     private static void validateProductName(String name) {
@@ -43,9 +41,16 @@ public class ProductValidator {
         }
     }
 
-    private static void validateProductPromotion(String promotion, List<Promotion> promotions) {
-        if (!promotions.contains(promotion)) {
-            throw new IllegalArgumentException(ErrorMessage.PRODUCT_NOT_FOUND.getMessage());
+    private static void validateProductPromotion(String promotion) {
+        if (promotion.equals("null")) {
+            return;
         }
+        if (!isPromotionExistsByName(promotion)) {
+            throw new IllegalArgumentException(ErrorMessage.PROMOTION_NOT_FOUND.getMessage());
+        }
+    }
+
+    private static boolean isPromotionExistsByName(String name) {
+        return Controller.promotions.containsKey(name);
     }
 }

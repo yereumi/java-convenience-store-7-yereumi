@@ -1,4 +1,4 @@
 package store.model;
 
-public record Product(String name, int price, int quantity, String promotion) {
+public record Product(int price, int quantity, String promotion) {
 }
