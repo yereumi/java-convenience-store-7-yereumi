@@ -12,10 +12,10 @@ public enum OutputMessage {
     RECEIPT_FREE_ITEM_HEADER("=============증\t정==============="),
     RECEIPT_FREE_ITEM("{0}\t\t{1}"),
     RECEIPT_FOOTER("===================================="),
-    RECEIPT_TOTAL_PURCHASE_AMOUNT("{0}\t\t{1}\t{2}"),
-    RECEIPT_PROMOTION_DISCOUNT("{0}\t\t\t-{1}"),
-    RECEIPT_MEMBERSHIP_DISCOUNT("{0}\t\t\t-{1}"),
-    RECEIPT_FINAL_PAYMENT("{0}\t\t\t {1}"),
+    RECEIPT_TOTAL_PURCHASE_AMOUNT("총구매액\t\t{0}\t{1}"),
+    RECEIPT_PROMOTION_DISCOUNT("행사할인\t\t\t-{0}"),
+    RECEIPT_MEMBERSHIP_DISCOUNT("멤버십할인\t\t\t-{0}"),
+    RECEIPT_FINAL_PAYMENT("내실돈\t\t\t {0}"),
     HYPHEN_SPACE("- "),
     COMMA(",");
 

@@ -9,8 +9,8 @@ public class InputView {
         return Console.readLine();
     }
 
-    public String confirmFreeItemOffer(String product) {
-        System.out.println(InputMessage.FREE_ITEM_OFFER_CONFIRMATION.getMessage(product));
+    public String confirmFreeItemOffer(String product, int count) {
+        System.out.println(InputMessage.FREE_ITEM_OFFER_CONFIRMATION.getMessage(product, count));
         return Console.readLine();
     }
 
